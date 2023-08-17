@@ -2,14 +2,14 @@
 {{ range .mahasiswa }}
   <tr>
     {{ $nomor = increment $nomor 1 }}
-    <td></td>
+    <td>{{ $nomor }}</td>
     <td>{{ .NamaLengkap }}</td>
     <td>{{ .JenisKelamin }}</td>
     <td>{{ .TempatLahir }}, {{ .TanggalLahir }}</td>
     <td>{{ .Alamat }}</td>
     <td>
-      <button class="btn btn-danger btn-sm">Delete</button>
-      <button class="btn btn-warning btn-sm">Edit</button>
+      <button data-id="{{ .Id }}" class="btn btn-danger btn-sm delete-mahasiswa">Delete</button>
+      <button data-id="{{ .Id }}" class="btn btn-warning btn-sm edit-mahasiswa">Edit</button>
     </td>    
   </tr>
 {{ end }}
